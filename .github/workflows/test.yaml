@@ -6,6 +6,15 @@ jobs:
   helloworld:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello World
-        run: echo "Hello World"
+      - name: clone the repo
+        uses: actions/checkout@v4
 
+      - name: run tests
+        run: ./gradlew test --scan
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Collect Screenshots
+          path: app/screenshots/
