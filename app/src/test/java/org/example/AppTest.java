@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import java.time.Duration;
 
 import org.example.pages.CheckboxPage;
+import org.example.util.Screenshot;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -41,7 +42,7 @@ class AppTest {
   @Test
   void googleTest() throws InterruptedException {
     browser.get("https://demoqa.com/checkbox");
-
+    Screenshot.takeScreenshot(browser, "checkboxpage");
     var checkboxPage = CheckboxPage.init(browser);
     checkboxPage.expandPath("Home.Documents.WorkSpace");
     checkboxPage.checkNode("Home.Documents.WorkSpace.React");
