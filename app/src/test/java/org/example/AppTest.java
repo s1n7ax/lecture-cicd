@@ -42,7 +42,7 @@ class AppTest {
   @Test
   void googleTest() throws InterruptedException {
     browser.get("https://demoqa.com/checkbox");
-    Screenshot.takeScreenshot(browser, "checkboxpage");
+    Screenshot.takeScreenshot(browser, "checkboxpage.png");
     var checkboxPage = CheckboxPage.init(browser);
     checkboxPage.expandPath("Home.Documents.WorkSpace");
     checkboxPage.checkNode("Home.Documents.WorkSpace.React");
